@@ -1,0 +1,14 @@
+.test-block-content {
+  padding: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.test-block-content h2 {
+  font-size: 32px;
+}
+
+.test-block-content button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
