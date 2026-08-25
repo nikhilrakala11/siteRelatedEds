@@ -1,6 +1,6 @@
 export default async function decorate(block) {
   try {
-    const response = await fetch('http://localhost:4502/bin/products');
+    const response = await fetch('http://localhost:4503/bin/products');
 
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
