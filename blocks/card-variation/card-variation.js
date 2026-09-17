@@ -4,6 +4,10 @@ export default function decorate(block) {
     const rows = [...block.children];
 
     rows.forEach((row) => {
-        console.log(row);
+    console.log('ROW:', row);
+
+    const columns = [...row.children];
+
+    console.log('COLUMNS:', columns);
     });
 }
