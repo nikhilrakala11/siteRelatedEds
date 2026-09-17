@@ -1,24 +1,36 @@
 export default function decorate(block) {
 
-    console.log('Decorating card variation block', block);
+  const ul = document.createElement('ul');
 
-    const ul = document.createElement('ul');
+  const rows = [...block.children].slice(2);
 
-    const rows = [...block.children];
+  rows.forEach((row) => {
 
-    rows.forEach((row) => {
+    const columns = [...row.children];
 
-        const columns = [...row.children];
+    const li = document.createElement('li');
+    li.classList.add('course-card');
 
-        const course = columns[0].textContent.trim();
-        const duration = columns[1].textContent.trim();
-        const location = columns[2].textContent.trim();
-        const cta = columns[3].textContent.trim();
+    const course = document.createElement('div');
+    course.classList.add('course-title');
+    course.textContent = columns[0].textContent.trim();
 
-        console.log('COURSE:', course);
-        console.log('DURATION:', duration);
-        console.log('LOCATION:', location);
-        console.log('CTA:', cta);
+    const duration = document.createElement('div');
+    duration.classList.add('course-duration');
+    duration.textContent = columns[1].textContent.trim();
 
-    });
+    const location = document.createElement('div');
+    location.classList.add('course-location');
+    location.textContent = columns[2].textContent.trim();
+
+    const cta = document.createElement('div');
+    cta.classList.add('course-cta');
+    cta.textContent = columns[3].textContent.trim();
+
+    li.append(course, duration, location, cta);
+
+    ul.append(li);
+  });
+
+  block.replaceChildren(ul);
 }
