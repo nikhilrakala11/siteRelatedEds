@@ -6,6 +6,8 @@ export default function decorate(block) {
     const columns = [...row.children];
 
     const course = columns[0].textContent;
-    console.log('Course:', course);
+    course.forEach((courseInner) => {
+    console.log('Course:', courseInner);
+    })
 });
     };
