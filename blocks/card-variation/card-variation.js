@@ -4,8 +4,9 @@ export default function decorate(block) {
     const rows = [...block.children];
    rows.forEach((row) => {
     const columns = [...row.children];
-    columns.forEach((column) => {
-      console.log('Columnnnnnnnnnnnnnnnnnnnnnnnn:', column);
+        const li = document.createElement('li');
+        li.append(...columns);
+        ul.append(li);
+        console.log('Added row to ul', ul);
     });
-  });
-};
+  }
